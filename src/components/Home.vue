@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>Home Page</h1>
+    <h3>What's in your mind?</h3>
     <b-container>
       <SearchBar></SearchBar>
     </b-container>
@@ -13,8 +13,8 @@ import SearchBar from './SearchBar'
 export default {
   name: 'Home',
   components: {
-      SearchBar
-    }
+    SearchBar
+  }
 }
 </script>
 
