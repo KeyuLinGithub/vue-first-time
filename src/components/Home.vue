@@ -3,6 +3,7 @@
     <h3>What's in your mind?</h3>
     <b-container>
       <SearchBar></SearchBar>
+      <GridDisplay></GridDisplay>
     </b-container>
 
   </div>
@@ -10,28 +11,17 @@
 
 <script>
 import SearchBar from './SearchBar'
+import GridDisplay from './GridDisplay'
 export default {
   name: 'Home',
   components: {
-    SearchBar
+    SearchBar,
+    GridDisplay
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
 </style>

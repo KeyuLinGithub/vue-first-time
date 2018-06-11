@@ -7,12 +7,22 @@ import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
 Vue.use(BootstrapVue)
 // Vue.config.productionTip = false
+
+const store = new Vuex.Store({
+  state: {
+    stories: []
+  }
+})
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   components: { App },
   template: '<App/>'

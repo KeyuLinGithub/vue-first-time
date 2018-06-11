@@ -37,11 +37,24 @@ export default {
       evt.preventDefault()
       console.log(this.form.query)
       console.log(this.form.type)
+      fetch(`http://www.reddit.com/search.json?q=${this.form.query}&sort=${this.form.type}`)
+      .then(res => res.json())
+      .then(data => {
+       console.log("ccc")
+        console.log(data)
+        console.log("ddd")
+        console.log(data.data.children.map(data => data.data))
+        this.$store.state.stories=data.data.children.map(data => data.data)
+      })
+      .catch(err => console.log(err))
     },
     onReset (evt) {
       evt.preventDefault()
       this.form.query = ''
       this.form.type = 'relevance'
+      console.log('woops')
+      console.log(this.$store.state.stories)
+      console.log(this.$store.state.stories[0])
     }
   }
 }
@@ -50,18 +63,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
 </style>
