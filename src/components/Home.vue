@@ -1,14 +1,20 @@
 <template>
   <div class="home">
     <h1>Home Page</h1>
+    <b-container>
+      <SearchBar></SearchBar>
+    </b-container>
 
   </div>
 </template>
 
 <script>
+import SearchBar from './SearchBar'
 export default {
   name: 'Home',
-  
+  components: {
+      SearchBar
+    }
 }
 </script>
 
